@@ -41,12 +41,21 @@ function Scroll(){
 /* quando clicar em dark */
 const buttonDark = document.getElementsByClassName('dimg')
 const darks = document.querySelector('html')
+let Ndark = 0
 
 for(const element of buttonDark) {
         element.addEventListener('click', function() {
             darks.classList.add('dark')
+            Ndark ++
+            if(darks.classList.contains("dark") && Ndark >= 2 ){
+                console.log('tem o dark')
+                darks.classList.remove('dark')
+                Ndark = 0
+            }
         })
 }
+
+
 
 
 /*************************************************** */
